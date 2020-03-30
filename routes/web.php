@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::prefix("admin")->group(function(){
+    Route::post('store',"AdminController@store");
+    Route::get('create',"AdminController@create");
+    Route::get('index',"AdminController@index");
+    Route::get("indexShow","AdminController@indexShow");
+    Route::post("SetName","AdminController@SetName");
+});
+
+Route::get("/login/login","LoginController@login");
+Route::post("/login/loginDo","LoginController@loginDo");
