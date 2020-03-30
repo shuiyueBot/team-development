@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::prefix("admin")->group(function(){
     Route::post('store',"AdminController@store");
     Route::get('create',"AdminController@create");
