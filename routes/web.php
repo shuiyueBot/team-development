@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('salesman')->group(function(){
+    Route::get('create','SalesmanController@create');
+    Route::post('store','SalesmanController@store');
+    Route::get('index','SalesmanController@index');
+    Route::get('edit/{id}','SalesmanController@edit');
+    Route::post('update/{id}','SalesmanController@update');
+    Route::get('destroy/{id}','SalesmanController@destroy');
+});
