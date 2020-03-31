@@ -22,6 +22,7 @@ Route::prefix('visit')->group(function(){
     Route::get('destroy/{id}','VisitController@destroy');
     Route::get('edit/{id}','VisitController@edit');
     Route::post('update/{id}','VisitController@update');
+
 });
 
 
@@ -36,6 +37,9 @@ Route::prefix('salesman')->group(function(){
 
 
 
+
+
+
 Route::prefix("admin")->group(function(){
     Route::post('store',"AdminController@store");
     Route::get('create',"AdminController@create");
@@ -46,4 +50,5 @@ Route::prefix("admin")->group(function(){
 
 Route::get("/login/login","LoginController@login");
 Route::post("/login/loginDo","LoginController@loginDo");
+
 

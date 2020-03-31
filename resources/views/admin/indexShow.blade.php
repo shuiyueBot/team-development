@@ -35,6 +35,13 @@
         <li><a href="#">业务员</a></li>
         @endif
         <li><a href="#">拜访记录</a></li>
+
+      @if($level==1)
+        <li class="active"><a href="/admin/index">管理员</a></li>
+        @endif
+        <li><a href="#">业务员</a></li>   
+        <li><a href="/visit/index">拜访记录</a></li>
+
         <li><a href="#">客户</a></li>
       </ul>
     </div>
