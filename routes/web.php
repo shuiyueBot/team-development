@@ -12,7 +12,10 @@
 */
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8f187fcb898148cd02d08f24bf57055378fa049f
 Route::prefix("admin")->group(function(){
     Route::post('store',"AdminController@store");
     Route::get('create',"AdminController@create");
