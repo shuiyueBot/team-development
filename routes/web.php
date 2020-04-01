@@ -15,7 +15,7 @@
 
 
 
-Route::prefix('visit')->group(function(){
+Route::prefix('visit')->middleware('isLogin')->group(function(){
     Route::get('create','VisitController@create');
     Route::post('store','VisitController@store');
     Route::get('index','VisitController@index');
@@ -26,7 +26,7 @@ Route::prefix('visit')->group(function(){
 });
 
 
-Route::prefix('salesman')->group(function(){
+Route::prefix('salesman')->middleware('isLogin')->group(function(){
     Route::get('create','SalesmanController@create');
     Route::post('store','SalesmanController@store');
     Route::get('index','SalesmanController@index');
@@ -40,13 +40,21 @@ Route::prefix('salesman')->group(function(){
 
 
 
-Route::prefix("admin")->group(function(){
+Route::prefix("admin")->middleware('isLogin')->group(function(){
     Route::post('store',"AdminController@store");
     Route::get('create',"AdminController@create");
     Route::get('index',"AdminController@index");
     Route::get("indexShow","AdminController@indexShow");
     Route::post("SetName","AdminController@SetName");
 });
+
+Route::prefix("new")->middleware('isLogin')->group(function(){
+   Route::get("create","NewController@create");
+    Route::post("store","NewController@store");
+    Route::get("index","NewController@index");
+    Route::get("polist/{id}","NewController@polist");
+});
+
 
 Route::get("/login/login","LoginController@login");
 Route::post("/login/loginDo","LoginController@loginDo");

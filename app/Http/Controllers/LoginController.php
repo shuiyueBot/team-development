@@ -14,7 +14,7 @@ class LoginController extends Controller
         $res=Admin::where($post)->first();
         if($res){
             session(["admin"=>$res]);
-           return \redirect("/admin/indexShow");
+           return \redirect("/new/index");
             
         }else{
             return \redirect("/login/login");

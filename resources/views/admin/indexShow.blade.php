@@ -30,13 +30,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">管理员</a></li>
+        
         @if($level==1)
-        <li><a href="#">业务员</a></li>
-        @endif
-        <li><a href="#">拜访记录</a></li>
-
-      @if($level==1)
         <li class="active"><a href="/admin/index">管理员</a></li>
         @endif
         <li><a href="#">业务员</a></li>   

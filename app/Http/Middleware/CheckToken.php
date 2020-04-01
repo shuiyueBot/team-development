@@ -15,6 +15,11 @@ class CheckToken
      */
     public function handle($request, Closure $next)
     {
+        $admin=$request->session()->get("admin");
+        // dd($admin);
+        if(!$admin){
+            return redirect("/login/login");
+        }
         return $next($request);
     }
 }

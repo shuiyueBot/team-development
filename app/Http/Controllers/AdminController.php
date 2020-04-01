@@ -50,6 +50,12 @@ class AdminController extends Controller
             'admin_pwd' => 'required',
             'admin_email' => 'required',
             'admin_tel' => 'required',
+        ],[
+            'admin_name.required'=>'用户名不能为空',
+            'admin_name.unique'=>'用户名已存在',
+            'admin_pwd.required'=>'密码不能为空',
+            'admin_email.required'=>'邮箱不能为空',
+            'admin_tel.required'=>'电话不能为空'
         ]);
         $post=request()->except("_token");
         $res=Admin::insert($post);
